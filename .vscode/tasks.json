@@ -1,0 +1,36 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe build active file",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${fileDirname}\\*.cpp",
+                "${workspaceFolder}\\imgui-1.91.6\\*.cpp",
+                "/I${workspaceFolder}\\imgui-1.91.6",
+                "/I${workspaceFolder}\\include\\include",
+                "/I${workspaceFolder}\\src",
+                "/link",
+                "d3d11.lib",
+                "dxgi.lib",
+                "user32.lib"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds the project with Dear ImGui."
+        }
+    ],
+    "version": "2.0.0"
+}

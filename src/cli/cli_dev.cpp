@@ -1,12 +1,15 @@
+#include "config/generate_config.h"
 #include <iostream>
 #include "cli.h"
+#include "cmd/commandline.h"
+#include <cstdlib>  // For std::system
 
 void startCLI() {
-    std::cout << "CLI Developer Tool\n";
-    std::cout << "Available commands:\n";
-    std::cout << "1. build --config: Generate build.conf template\n";
-    std::cout << "2. build --init: Initialize the build process\n";
-    std::cout << "3. build --debug: Debug the plugin\n";
-    std::cout << "4. package --build: Package the plugin\n";
-    std::cout << "Use arguments in the format: NPS.exe <command> <option>\n";
+    runCommand();
+}
+
+void runCommand() {
+    std::string config_file = "resources/config/build.conf";
+    CommandLine commandLine;
+    commandLine.runBuild(config_file);
 }

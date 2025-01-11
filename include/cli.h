@@ -1,9 +1,13 @@
-#ifndef CLI_H
-#define CLI_H
+#ifndef CLI_HANDLER_H
+#define CLI_HANDLER_H
 
 #include <string>
 
-// Function to start the CLI for plugin development
-void startCLI(const std::string& command);
+// Function to start the CLI tool and process commands
+void startCLI();
 
-#endif // CLI_H
+// Function to execute the NPS command to generate build.conf
+// - command: The specific command to run (e.g., "build --config")
+void runCommand();
+
+#endif // CLI_HANDLER_H

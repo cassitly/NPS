@@ -12,8 +12,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Include directories
-include_directories(NPS PRIVATE
+include_directories(
     ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/include/config
+    ${PROJECT_SOURCE_DIR}/include/cmd
     ${PROJECT_SOURCE_DIR}/external/dependencies
 )
 
@@ -24,7 +26,7 @@ file(GLOB_RECURSE SRC_FILES "${PROJECT_SOURCE_DIR}/src/*.cpp")
 add_executable(NPS ${SRC_FILES})
 
 # Link external libraries (only necessary libraries, not headers)
-target_link_libraries(NPS PRIVATE
+target_include_directories(NPS PRIVATE
     ${PROJECT_SOURCE_DIR}/external/dependencies/nlohmann/json.hpp
 )
 
